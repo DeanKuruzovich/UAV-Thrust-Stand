@@ -62,6 +62,6 @@ Flash the logging firmware and command throttle over serial — no extra hardwar
 ~/.platformio/penv/bin/pio run -e esp32-s3-devkitc-1 -t upload
 .venv/bin/python Tools/motor_ramp_test.py        # ramps 0→100%
 # or the GUI:
-.venv/bin/python Tools/motor_logger.py
+.venv/bin/python TESTSTANDGUI.py
 ```
 Firmware streams 50 Hz CSV; the ESC line is GPIO8 the whole time.

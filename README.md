@@ -150,7 +150,7 @@ pip install -r requirements.txt
 ### Run
 
 ```bash
-python motor_logger.py
+python TESTSTANDGUI.py
 ```
 
 The GUI auto-detects the ESP32 on startup by scanning COM / tty ports for USB, CP210x, CH340, and FTDI identifiers.  If not found it retries every 2 seconds.
@@ -193,7 +193,7 @@ Example row:
 
 ## Automated Test Programs
 
-Defined in `Tools/motor_logger.py` as `(throttle_%, duration_s)` step lists:
+Defined in `TESTSTANDGUI.py` as `(throttle_%, duration_s)` step lists:
 
 | Program | Steps | Total Duration |
 |---------|-------|---------------|
@@ -248,12 +248,13 @@ Subsequent rows — 50 Hz data.
 UAV-Thrust-Stand/
 ├── src/
 │   └── main.cpp            # ESP32-S3 firmware (PlatformIO / Arduino)
+├── TESTSTANDGUI.py         # PC GUI — launcher for the propeller and hardware tests
 ├── Tools/
-│   ├── motor_logger.py     # PC GUI — telemetry logger & test controller
 │   └── requirements.txt    # Python dependencies (pyserial, matplotlib)
 ├── include/                # PlatformIO include directory
 ├── lib/                    # PlatformIO local libraries
 ├── test/                   # PlatformIO test directory
 ├── platformio.ini          # Build configuration
+├── Propeller Tests/        # Auto-named recorded runs (prop_test_<date>_#<n>_<label>.csv)
 └── DBF_Test_Run_*.csv      # Example recorded test runs
 ```
